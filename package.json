@@ -17,8 +17,16 @@
     "test": "karma start karma.conf.js"
   },
   "dependencies": {
-    "bower": "^1.7.9",
-    "less": "^2.7.1"
+    "anchor-js": "^3.2.2",
+    "bootstrap": "^3.3.7",
+    "bootstrap-toc": "github:hotdoc/bootstrap-toc#gh-pages",
+    "compare-versions": "~2.0.1",
+    "jquery": "^3.7.1",
+    "jquery-touchswipe": "^1.6.18",
+    "less": "^2.7.1",
+    "malihu-custom-scrollbar-plugin": "^3.1.5",
+    "mustache": "^2.2.1",
+    "typeahead.js": "^0.11.1"
   },
   "devDependencies": {
     "jasmine-core": "^2.2.0",

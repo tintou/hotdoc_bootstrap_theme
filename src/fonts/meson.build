@@ -1,12 +1,12 @@
-bower_font_files = files(
-    bower_files_dir / 'bootstrap/dist/fonts/glyphicons-halflings-regular.eot',
-    bower_files_dir / 'bootstrap/dist/fonts/glyphicons-halflings-regular.svg',
-    bower_files_dir / 'bootstrap/dist/fonts/glyphicons-halflings-regular.ttf',
-    bower_files_dir / 'bootstrap/dist/fonts/glyphicons-halflings-regular.woff',
-    bower_files_dir / 'bootstrap/dist/fonts/glyphicons-halflings-regular.woff2',
+npm_font_files = files(
+    npm_files_dir / 'bootstrap/dist/fonts/glyphicons-halflings-regular.eot',
+    npm_files_dir / 'bootstrap/dist/fonts/glyphicons-halflings-regular.svg',
+    npm_files_dir / 'bootstrap/dist/fonts/glyphicons-halflings-regular.ttf',
+    npm_files_dir / 'bootstrap/dist/fonts/glyphicons-halflings-regular.woff',
+    npm_files_dir / 'bootstrap/dist/fonts/glyphicons-halflings-regular.woff2',
 )
 
-foreach font: bower_font_files
+foreach font: npm_font_files
     configure_file(
         input: font,
         output: '@PLAINNAME@',

@@ -11,16 +11,16 @@ js_files = files(
     'utils.js',
 )
 
-bower_js_files = files(
-    bower_files_dir / 'anchor-js/anchor.min.js',
-    bower_files_dir / 'bootstrap/dist/js/bootstrap.js',
-    bower_files_dir / 'bootstrap-toc/dist/bootstrap-toc.min.js',
-    bower_files_dir / 'compare-versions/index.js',
-    bower_files_dir / 'jquery/dist/jquery.js',
-    bower_files_dir / 'jquery-touchswipe/jquery.touchSwipe.min.js',
-    bower_files_dir / 'malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js',
-    bower_files_dir / 'mustache.js/mustache.min.js',
-    bower_files_dir / 'typeahead.js/dist/typeahead.jquery.min.js',
+npm_js_files = files(
+    npm_files_dir / 'anchor-js/anchor.min.js',
+    npm_files_dir / 'bootstrap/dist/js/bootstrap.js',
+    npm_files_dir / 'bootstrap-toc/dist/bootstrap-toc.min.js',
+    npm_files_dir / 'compare-versions/index.js',
+    npm_files_dir / 'jquery/dist/jquery.js',
+    npm_files_dir / 'jquery-touchswipe/jquery.touchSwipe.min.js',
+    npm_files_dir / 'malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js',
+    npm_files_dir / 'mustache/mustache.min.js',
+    npm_files_dir / 'typeahead.js/dist/typeahead.jquery.min.js',
 )
 
 foreach js: js_files
@@ -33,7 +33,7 @@ foreach js: js_files
     )
 endforeach
 
-foreach js: bower_js_files
+foreach js: npm_js_files
     configure_file(
         input: js,
         output: '@PLAINNAME@',
