@@ -11,8 +11,8 @@ less_dep_files = files(
 )
 
 css_files = files(
-  bower_files_dir / 'malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css',
-  bower_files_dir / 'bootstrap-toc/dist/bootstrap-toc.min.css',
+  npm_files_dir / 'malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css',
+  npm_files_dir / 'bootstrap-toc/dist/bootstrap-toc.min.css',
 )
 
 foreach css: less_files

@@ -59,7 +59,7 @@ hotdoc.generate_doc('some-doc-name',
 Install the dependencies:
 
 ```
-npm install && ./node_modules/bower/bin/bower install
+npm install
 ```
 
 Build the theme:

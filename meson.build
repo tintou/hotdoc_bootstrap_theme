@@ -3,17 +3,10 @@ project('hotdoc_bootstrap_theme', 'c')
 fs = import('fs')
 
 npm = find_program('npm', native: true)
+npm_files_dir = meson.current_source_dir() / 'node_modules'
 message('Running npm install…')
 res = run_command(
     npm, 'install', meson.current_source_dir(),
-    check: true,
-)
-
-bower = find_program('bower', dirs: [meson.current_source_dir() / 'node_modules/bower/bin'], native: true)
-bower_files_dir = meson.current_source_dir() / 'bower_components'
-message('Running bower install…')
-res = run_command(
-    bower, '--allow-root', 'install', '--config.directory=@0@'.format(bower_files_dir),
     check: true,
 )
 

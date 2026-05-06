@@ -29,14 +29,14 @@ endef
 ## Javascript files
 
 SRC_JS = \
-	bower_components/jquery/dist/jquery.js \
-	bower_components/bootstrap/dist/js/bootstrap.js \
-	bower_components/typeahead.js/dist/typeahead.jquery.min.js \
-	bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js \
-	bower_components/mustache.js/mustache.min.js \
-	bower_components/bootstrap-toc/dist/bootstrap-toc.min.js \
-	bower_components/jquery-touchswipe/jquery.touchSwipe.min.js \
-	bower_components/anchor-js/anchor.min.js \
+	node_modules/jquery/dist/jquery.js \
+	node_modules/bootstrap/dist/js/bootstrap.js \
+	node_modules/typeahead.js/dist/typeahead.jquery.min.js \
+	node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js \
+	node_modules/mustache/mustache.min.js \
+	node_modules/bootstrap-toc/dist/bootstrap-toc.min.js \
+	node_modules/jquery-touchswipe/jquery.touchSwipe.min.js \
+	node_modules/anchor-js/anchor.min.js \
 	src/js/language_switching.js \
 	src/js/lines_around_headings.js \
 	src/js/navbar_offset_scroller.js \
@@ -57,13 +57,13 @@ SRC_JS_SEARCH = \
 
 $(foreach js_file,$(SRC_JS_SEARCH),$(eval $(call COPY_template,dist/js/search/$(notdir $(js_file)),$(js_file))))
 
-$(eval $(call COPY_template,dist/js/compare-versions.js,bower_components/compare-versions/index.js))
+$(eval $(call COPY_template,dist/js/compare-versions.js,node_modules/compare-versions/index.js))
 
 ## CSS files
 
 SRC_CSS = \
-	bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css \
-	bower_components/bootstrap-toc/dist/bootstrap-toc.min.css \
+	node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css \
+	node_modules/bootstrap-toc/dist/bootstrap-toc.min.css \
 	$(NULL)
 
 $(foreach css_file,$(SRC_CSS),$(eval $(call COPY_template,dist/css/$(notdir $(css_file)),$(css_file))))
@@ -108,7 +108,7 @@ SRC_THEME += $(1)
 endef
 
 SRC_DIRS = \
-	bower_components/bootstrap/dist/fonts \
+	node_modules/bootstrap/dist/fonts \
 	src/images \
 	src/templates \
 	$(NULL)
