@@ -2,13 +2,15 @@ project('hotdoc_bootstrap_theme', 'c')
 
 fs = import('fs')
 
-npm = find_program('npm', native: true)
 npm_files_dir = meson.current_source_dir() / 'node_modules'
-message('Running npm install…')
-res = run_command(
-    npm, 'install', meson.current_source_dir(),
-    check: true,
-)
+if not get_option('offline')
+	npm = find_program('npm', native: true)
+	message('Running npm install…')
+	res = run_command(
+	    npm, 'install', meson.current_source_dir(),
+	    check: true,
+	)
+endif
 
 less = find_program('lessc', dirs: [meson.current_source_dir() / 'node_modules/less/bin/'], native: true)
 if get_option('less_include_path') != ''
