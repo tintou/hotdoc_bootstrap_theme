@@ -53,6 +53,12 @@ hotdoc.generate_doc('some-doc-name',
 )
 ```
 
+#### Without internet access
+
+In some contexts, it is required to build the theme without internet access.
+In this case, use the `-Doffline=true` build option to disable the automatic
+`npm install` command. The build system will assume that all the files are
+already in place.
 
 ### Without meson
 
