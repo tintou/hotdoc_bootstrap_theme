@@ -297,7 +297,7 @@ function display_urls_for_token(data) {
       var url_text = get_url_node_text(urls[i], url);
 
       if (gi_languages.indexOf('default') != -1 || gi_languages.indexOf(utils.hd_context.gi_language) != -1) {
-        meat += Mustache.to_html(search_result_template, {
+        meat += Mustache.render(search_result_template, {
           'url_text': url_text,
           'url_href': url,
           'extra_class': '',
@@ -311,10 +311,10 @@ function display_urls_for_token(data) {
       } else {
         var pushed = false;
         for (var k = 0; k < gi_languages.length; k++) {
-          var search_alert = Mustache.to_html(search_alert_template, {
+          var search_alert = Mustache.render(search_alert_template, {
             'language': gi_languages[k].capitalizeFirstLetter(),
           });
-          meat += Mustache.to_html(search_result_template, {
+          meat += Mustache.render(search_result_template, {
             'url_text': url_text,
             'url_href': url,
             'extra_class': 'search_result_' + gi_languages[k],

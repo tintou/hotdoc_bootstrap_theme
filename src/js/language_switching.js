@@ -24,7 +24,7 @@ $(document).ready(function() {
 		var list_data = {'items': []}
 		for (var i = 0; i < utils.hd_context.gi_languages.length; i++) {
 			var language = utils.hd_context.gi_languages[i];
-			list_data.items.push(Mustache.to_html(
+			list_data.items.push(Mustache.render(
 						hd_language_switching.item_template, {
 							'root': utils.hd_context.hd_root,
 							'project_url_path': utils.hd_context.project_url_path,
@@ -33,7 +33,7 @@ $(document).ready(function() {
 						}));
 		}
 
-		var widget = Mustache.to_html(
+		var widget = Mustache.render(
 				hd_language_switching.list_template,
 				list_data);
 

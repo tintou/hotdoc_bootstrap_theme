@@ -23,7 +23,7 @@
     "bootstrap-toc": "github:hotdoc/bootstrap-toc#gh-pages",
     "compare-versions": "~2.0.1",
     "jquery": "^3.7.1",
-    "mustache": "^2.2.1",
+    "mustache": "^4.2.0",
     "sass": "^1.100.0",
     "typeahead.js": "^0.11.1"
   },
