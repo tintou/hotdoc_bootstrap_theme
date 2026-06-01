@@ -15,7 +15,6 @@ npm_js_files = files(
     npm_files_dir / 'bootstrap/dist/js/bootstrap.bundle.js',
     npm_files_dir / 'bootstrap-toc/dist/bootstrap-toc.min.js',
     npm_files_dir / 'jquery/dist/jquery.js',
-    npm_files_dir / 'jquery-touchswipe/jquery.touchSwipe.min.js',
     npm_files_dir / 'mustache/mustache.min.js',
     npm_files_dir / 'typeahead.js/dist/typeahead.jquery.min.js',
 )
