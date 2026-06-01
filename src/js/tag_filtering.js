@@ -10,25 +10,25 @@ function createTagsDropdown(tags_hashtable) {
 		if (title == 'deprecated') {
 			var menu = $("#menu");
 			var widget = '';
-			widget += '<li>';
-			widget += '<button type="button" id="show-deprecated" class="btn navbar-btn btn-default" data-toggle="button" aria-pressed="false" autocomplete="off">'
+			widget += '<li class="nav-item">';
+			widget += '<button type="button" id="show-deprecated" class="btn btn-secondary btn-sm" data-bs-toggle="button" aria-pressed="false" autocomplete="off">'
 			widget += 'Show deprecated symbols';
 			widget += '</button>';
 			widget += '</li>';
 			menu.append(widget);
 		} else {
 			var menu = $('#menu');
-			var widget = '<li class="dropdown">';
-			widget += '<a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
-			widget += title.capitalizeFirstLetter() + ' ';
-			widget += '<span class="caret"></span></a>';
+			var widget = '<li class="nav-item dropdown">';
+			widget += '<a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+			widget += title.capitalizeFirstLetter();
+			widget += '</a>';
 			widget += '<ul class="dropdown-menu" id="' + key + '-menu">';
 
-			widget += '<li><a id="' + key + '">Reset</a></li>';
-			widget += '<li role="separator" class="divider"></li>';
+			widget += '<li><a class="dropdown-item" id="' + key + '">Reset</a></li>';
+			widget += '<li><hr class="dropdown-divider"></li>';
 
 			values.map(function (item) {
-				widget += '<li><a id="'+ key + '">';
+				widget += '<li><a class="dropdown-item" id="'+ key + '">';
 				widget += item;
 				widget += '</a></li>';
 			});
@@ -252,6 +252,11 @@ function setupFilters() {
     if (main_larger_than_viewport()) {
 		  Toc.init({$nav: $myNav, depth: 3, $scope: $("#main")});
     }
+
+    bootstrap.ScrollSpy.getOrCreateInstance(document.body, {
+        target: '#toc',
+        offset: 70
+    }).refresh();
   }
 
   if (utils.hd_context.extension == 'gi-extension')
@@ -274,9 +279,9 @@ function setupFilters() {
 		$(this).attr("data-target", old_href);
 	});
 
-  $("body").scrollspy({
-    target: "#toc",
-    offset: 70,
+  new bootstrap.ScrollSpy(document.body, {
+    target: '#toc',
+    offset: 70
   });
 
 	anchors.options = {

@@ -1,12 +1,6 @@
 $(document).ready(function() {
 	setupFilters();
 
-    /* TODO: get rid of this somehow */
-	$("#toc-wrapper").mCustomScrollbar({"scrollInertia": 0,
-					    "theme": "dark",
-					    "mouseWheel":{ "preventDefault": true },
-					    "documentTouchScroll": false});
-
 	$("#main").swipe({
 		swipe:function(event, direction, distance, duration, fingers)
 		{

@@ -12,11 +12,17 @@ if not get_option('offline')
 	)
 endif
 
-less = find_program('lessc', dirs: [meson.current_source_dir() / 'node_modules/less/bin/'], native: true)
-if get_option('less_include_path') != ''
-  less_options = ['--include-path=' + get_option('less_include_path')]
+sass = find_program('sass', dirs: [meson.current_source_dir() / 'node_modules/.bin/'], native: true)
+_sass_silence = [
+  '--silence-deprecation=import',
+  '--silence-deprecation=global-builtin',
+  '--silence-deprecation=color-functions',
+  '--silence-deprecation=if-function',
+]
+if get_option('sass_include_path') != ''
+  sass_options = ['--load-path=' + get_option('sass_include_path'), '--no-source-map'] + _sass_silence
 else
-  less_options = []
+  sass_options = ['--no-source-map'] + _sass_silence
 endif
 
 targets = []

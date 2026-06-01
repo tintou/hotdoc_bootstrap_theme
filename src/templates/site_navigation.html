@@ -14,7 +14,7 @@
 <link rel="alternate stylesheet" href="assets/css/light-sitenav.css" type="text/css" title="light"/>
 
 <script src="assets/js/jquery.js"></script>
-<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/bootstrap.bundle.js"></script>
 <script src="assets/js/styleswitcher.js"></script>
 <script src="assets/js/navigation.js"></script>
 
@@ -53,16 +53,16 @@
 
 		<div class="sidenav-panel-body @sidenav_panel_extra_class">
 			@if page.subpages:
-			<span class="sidenav-toggle" data-toggle="collapse" data-target="#@name-children" aria-expanded="false">
+			<span class="sidenav-toggle" data-bs-toggle="collapse" data-bs-target="#@name-children" aria-expanded="false">
 			@end
 			<div class="panel-heading">
 				<h4 class="panel-title" data-toc-skip="true">
 					@if page.subpages:
-					<i class="glyphicon glyphicon-chevron-right pull-right"></i>
-					<i class="glyphicon glyphicon-chevron-down pull-right"></i>
+					<i class="bi bi-chevron-right float-end"></i>
+					<i class="bi bi-chevron-down float-end"></i>
 					@end
 					<a class="sidenav-ref" href="@page_link" data-nav-ref="@unique_ref">@page.get_title()!e</a>
-				</h4> 
+				</h4>
 			</div>
 			@if page.subpages:
 			</span>

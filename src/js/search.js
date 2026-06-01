@@ -189,7 +189,7 @@ search_result_template = [
 
 search_alert_template = [
   '<div class="search-alert alert-warning" role="alert">',
-  '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>',
+  '<i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i>',
   'Language: {{{language}}}',
   '</div>'
 ].join('\n');

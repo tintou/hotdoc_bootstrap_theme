@@ -2,22 +2,21 @@ var hd_language_switching = hd_language_switching || {};
 
 hd_language_switching.item_template = [
 	'<li>',
-	'<a href="{{{root}}}{{{project_url_path}}}{{{basename}}}?gi-language={{{language}}}">',
+	'<a class="dropdown-item" href="{{{root}}}{{{project_url_path}}}{{{basename}}}?gi-language={{{language}}}">',
 	'{{language}}',
 	'</a>',
 	'</li>'].join('\n');
 
 hd_language_switching.list_template = [
-	'<li class="dropdown">',
-	'<a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">',
-	'Language ',
-	'<span class="caret"></span>',
+	'<li class="nav-item dropdown">',
+	'<a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">',
+	'Language',
+	'</a>',
 	'<ul class="dropdown-menu">',
 	'{{#items}}',
 	'{{{.}}}',
 	'{{/items}}',
 	'</ul>',
-	'</a>',
 	'</li>'].join('\n');
 
 $(document).ready(function() {

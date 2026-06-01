@@ -1,32 +1,32 @@
-less_files = files(
-    'dark-frontend.less',
-    'dark-sitenav.less',
-    'light-frontend.less',
-    'light-sitenav.less',
+scss_files = files(
+    'dark-frontend.scss',
+    'dark-sitenav.scss',
+    'light-frontend.scss',
+    'light-sitenav.scss',
+    'bootstrap-icons.scss',
 )
 
-less_dep_files = files(
-    'frontend.less',
-    'sitenav.less',
+scss_dep_files = files(
+    'frontend.scss',
+    'sitenav.scss',
+    'hotdoc-variables.scss',
 )
 
 css_files = files(
-  npm_files_dir / 'malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css',
   npm_files_dir / 'bootstrap-toc/dist/bootstrap-toc.min.css',
 )
 
-foreach css: less_files
+foreach scss: scss_files
     targets += [
       custom_target(
-        command: [less] + less_options + ['@INPUT@', '@OUTPUT0@'],
-        input: css,
+        command: [sass] + sass_options + ['@INPUT@', '@OUTPUT0@'],
+        input: scss,
         output: '@BASENAME@.css',
         build_by_default: true,
         install: get_option('install'),
         install_dir: install_dir / 'css',
         depend_files: [
-          get_option('less_include_path'),
-          less_dep_files
+          scss_dep_files
         ],
       )
     ]

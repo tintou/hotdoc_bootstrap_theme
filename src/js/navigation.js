@@ -7,12 +7,12 @@ function unfold_current_page(base_name, hd_context) {
 
 	$(this_panel_body).attr("href", hd_context.hd_basename + "#");
 
-    /* Make sure we are already fully unfolded when the function returns,
-     * so that scroll can reach the exact spot */
-    $.support.transition = false;
-	panels_to_unfold.collapse("show");
-	this_panel.collapse("show");
-    $.support.transition = true;
+	panels_to_unfold.each(function() {
+		this.classList.add('show');
+	});
+	if (this_panel[0]) {
+		this_panel[0].classList.add('show');
+	}
 
 	return this_panel;
 }

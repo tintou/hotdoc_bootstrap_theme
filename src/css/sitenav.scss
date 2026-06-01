@@ -1,0 +1,46 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "hotdoc-variables";
+
+body {
+    background-color: $light;
+    height: 100vh;
+}
+
+.sidenav-panel-body {
+    padding: 0px;
+    padding-left: 5px;
+
+    span {
+        cursor: pointer;
+        height: 100%;
+    }
+}
+
+.sidenav-main-panel-body {
+    @extend .sidenav-panel-body;
+    padding: 0px;
+}
+
+.sidenav-panel-odd {
+    background-color: $light;
+}
+
+.sidenav-panel-even {
+    background-color: darken($light, 7%);
+}
+
+.sidenav-panel-current {
+    > .panel-heading, > span > .panel-heading {
+        border-left: 3px solid $success;
+        > .panel-title {
+            color: $success;
+        }
+    }
+}
+
+span[aria-expanded=true] .bi-chevron-right {
+    display: none;
+}
+span[aria-expanded=false] .bi-chevron-down {
+    display: none;
+}
